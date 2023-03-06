@@ -1,133 +1,77 @@
+img {
+    max-width: 100%;
+    height: 100px;
+}
+
 body {
     background-color: black;
-  }
-  
-  .container {
-    width: 70%;
-    min-width: 50%;
+}
+
+.main {
+    width: 30%;
+    min-width: 10%;
     margin: auto;
     display: flex;
     flex-direction: column;
-  }
-  
-  .kanban-heading {
+}
+
+.kanban-tittle {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     font-family: sans-serif;
-  }
-  
-  .kanban-board {
+}
+
+.box {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     font-family: sans-serif;
-  }
-  
-  .kanban-heading-text {
-    font-size: 1.8rem;
+    align-items: center;
+}
+
+.kanban-tittle {
+    font-size: 1.0rem;
     background-color: tomato;
-    padding: 0.8rem 1.7rem;
+    padding: 0.1rem 1.0rem;
     border-radius: 0.5rem;
-    margin: 1rem;
-  }
-  
-  .kanban-block,
-  .create-new-task-block {
+    margin: 0.5rem;
+}
+
+.kanban-box {
     padding: 0.6rem;
     width: 30.5%;
-    min-width: 14rem;
-    min-height: 4.5rem;
+    min-width: 10rem;
+    min-height: 14.5rem;
     border-radius: 0.3rem;
-  }
-  
-  #todo {
+}
+
+#information-box {
+    background-color: #F7C04A;
+    min-width: 15rem;
+}
+
+#todo-box {
     background-color: #fec6d1;
-  }
+}
   
-  #inprogress {
+#inprogress-box {
     background-color: #ffaf00;
-    /* display: none; */
-  }
+}
   
-  #done {
+#done-box {
     background-color: #018b01;
-    /* display: none; */
-  }
-  
-  .task {
-    background-color: white;
-    margin: 0.2rem 0rem 0.3rem 0rem;
-    border: 0.1rem solid black;
-    border-radius: 0.2rem;
-    padding: 0.5rem 0.2rem 0.5rem 2rem;
-  }
-  
-  #task-button {
-    margin: 0.2rem 0rem 0.1rem 0rem;
-    background-color: white;
-    border-radius: 0.2rem;
-    width: 100%;
-    border: 0.25rem solid black;
-    padding: 0.5rem 2.7rem;
-    border-radius: 0.3rem;
-    font-size: 1rem;
-  }
-  
-  .create-new-task-block {
-    display: none;
-    /* display: flex; */
-    background: #ffaf00;
-    width: 64.4%;
-    flex-direction: column;
-  }
-  
-  .form-row {
-    display: flex;
-    flex-direction: row;
-    margin: 0.2rem;
-  }
-  
-  .form-row-label {
-    width: 15%;
-    padding: 0.2rem;
-    padding-right: 0.5rem;
-    border: 0.1rem solid black;
-    border-right: 0;
-    border-radius: 0.2rem 0rem 0rem 0.2rem;
-  }
-  
-  .form-row-input {
-    border: 0.1rem solid black;
-    border-radius: 0rem 0.2rem 0.2rem 0rem;
-    width: 85%;
-  }
-  
-  textarea {
-    resize: none;
-  }
-  
-  .form-row-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 0.2rem;
-  }
-  
-  #edit-button,
-  #save-button,
-  #cancel-button {
-    margin: 0.2rem 0rem 0.1rem 0rem;
-    background-color: white;
-    border-radius: 0.2rem;
-    width: 49.2%;
-    border: 0.25rem solid black;
-    padding: 0.5rem 2.7rem;
-    border-radius: 0.3rem;
-    font-size: 1rem;
-  }
-  
-  #edit-button {
-    display: none;
-  }
-  
+}
+
+.information-input {
+    width: 160px;
+    height: 25px;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#save-information {
+    width: 50px;
+    background: rgb(8, 133, 229);
+    color:aliceblue;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
