@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Project Kanban Board</title>
-    <link rel="stylesheet" href="style-pj.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="logo">
@@ -21,15 +21,18 @@
 
             <div id="information-box" class="kanban-box"><h3>information Box</h3>
                 <div>
-                    <input type="text" placeholder="Description" class="information-input">
+                    <input id="input-description" type="text" placeholder="Description" class="information-input">
+                    <span id="inputDescription-error" class="error"></span>
+                </br>
                 </div>
 
-                <select id="select-type" class="information-input">
+                <select id="input-type" class="information-input">
                     <option value="" selected>--Type--</option>
                     <option value="">To Do</option>
                     <option value="">In Progress</option>
                     <option value="">Done</option>
                 </select>
+                <span id="inputType-error" class="error"></span>
                 </br>
 
                 <label>&nbsp;</label>
@@ -63,6 +66,6 @@
 
     </div>
 
-    <script src="main-pj.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
