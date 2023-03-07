@@ -27,16 +27,16 @@
                 </div>
 
                 <select id="input-type" class="information-input">
-                    <option value="" selected>--Type--</option>
-                    <option value="">To Do</option>
-                    <option value="">In Progress</option>
-                    <option value="">Done</option>
+                    <option value="Type" selected>--Type--</option>
+                    <option value="To Do">To Do</option>
+                    <option value="Inprogress">In Progress</option>
+                    <option value="Done">Done</option>
                 </select>
                 <span id="inputType-error" class="error"></span>
                 </br>
 
                 <label>&nbsp;</label>
-                <button id="save-information" class="information-input">Save</button>
+                <button id="save-information" class="information-input" onclick="recordDataToDoInput()">Save</button>
 
             </div>
 
@@ -46,6 +46,7 @@
             </div> -->
             <div id="todo-box" class="kanban-box">
                 <h3>To Do</h3>
+                <table id="todo-card" width="160" border="1"></table>
              </div>
    
             <!-- <div id="inprogress-box" class="kanban-box" ondragover="allowDrop(event)" ondrop="drop(event)">
