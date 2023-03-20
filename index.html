@@ -7,7 +7,7 @@
     <title>Test Project Kanban Board</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="drawTodoReport(), drawInprogressReport(), drawDoneReport()">
     <div id="logo">
         <img src="images/1998.png" alt="">
     </div>
@@ -19,7 +19,7 @@
 
         <div class="box">
 
-            <div id="information-box" class="kanban-box"><h3>information Box</h3>
+            <div id="information-box"><h3>information Box</h3>
                 <div>
                     <input id="input-description" type="text" placeholder="Description" class="information-input">
                     <span id="inputDescription-error" class="error"></span>
@@ -28,39 +28,33 @@
 
                 <select id="input-type" class="information-input">
                     <option value="Type" selected>--Type--</option>
-                    <option value="To Do">To Do</option>
-                    <option value="Inprogress">In Progress</option>
+                    <option value="ToDo">ToDo</option>
+                    <option value="Inprogress">InProgress</option>
                     <option value="Done">Done</option>
                 </select>
                 <span id="inputType-error" class="error"></span>
                 </br>
 
                 <label>&nbsp;</label>
-                <button id="save-information" class="information-input" onclick="recordDataToDoInput()">Save</button>
+                <button id="save-information" class="information-input" onclick="recordDataInput()">Save</button>
 
             </div>
 
-            <!-- <div id="todo-box" class="kanban-box" ondragover="allowDrop(event)" ondrop="drop(event)">
-               <h3>To Do</h3>
-               <input type="text" id="data-input" class="task-input" draggable="true" ondragstart="drag(event)">
-            </div> -->
+            
             <div id="todo-box" class="kanban-box">
                 <h3>To Do</h3>
-                <table id="todo-card" width="160" border="1"></table>
+                <!-- <table id="todo-card" width="400" border="1"></table> -->
              </div>
    
-            <!-- <div id="inprogress-box" class="kanban-box" ondragover="allowDrop(event)" ondrop="drop(event)">
-               <h3>In Progress</h3>
-            </div> -->
+           
             <div id="inprogress-box" class="kanban-box">
                 <h3>In Progress</h3>
+                <!-- <table id="inprogres-card" width="400" border="1"></table> -->
              </div>
 
-             <!-- <div id="done-box" class="kanban-box" ondragover="allowDrop(event)" ondrop="drop(event)">
-                <h3>Done</h3>
-             </div> -->
             <div id="done-box" class="kanban-box">
                <h3>Done</h3>
+               <!-- <table id="done-card" width="400" border="1"></table> -->
             </div>
         </div>
 
