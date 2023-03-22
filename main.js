@@ -1,8 +1,6 @@
 const switchLocation = (taskName,fromLocation,toLocation)=>{
     // Check if from Location contain item with taskName
-
     // If exists
-    // Delete item in fromLocation
     // Create item in toLocation
     
     // Update data in localStorage
@@ -40,42 +38,11 @@ if (((inputdescript).length < 50) && (input_typekanban === "ToDo"))
          });
         localStorage.setItem('data_ToDoBox', JSON.stringify(data_ToDoBox));
         this.drawTodo();
-    } else if (((inputdescript).length < 50) && (input_typekanban === "Inprogress")) {
-        let data_InprogressBox = localStorage.getItem('data_InprogressBox') ? JSON.parse(localStorage.getItem('data_InprogressBox')) : [];
-            data_InprogressBox.push({
-                descript: inputdescript,
-                input_type: input_typekanban,
-            });
-            localStorage.setItem('data_InprogressBox', JSON.stringify(data_InprogressBox));
-            this.drawInprogress();
-        
-    } else if (((inputdescript).length < 50) && (input_typekanban === "Done")) {
-        let data_DoneBox = localStorage.getItem('data_DoneBox') ? JSON.parse(localStorage.getItem('data_DoneBox')) : [];
-                data_DoneBox.push({
-                    descript: inputdescript,
-                    input_type: input_typekanban,
-                });
-                localStorage.setItem('data_DoneBox', JSON.stringify(data_DoneBox));
-                this.drawDone();
-    };
+    } else {
+        alert("Vui lòng kiểm tra dữ liệu");
+    }
     resetInput();
 };
-
-
-// function drawInprogress(){
-//     const parentElement = document.getElementById('inprogress-box');
-//     const header = "In Progress";
-//     const data_inprogress = localStorage.getItem('data_InprogressBox') ? JSON.parse(localStorage.getItem('data_InprogressBox')) : [];
-
-//     drawTask(parentElement,header,data_inprogress);
-// };
-// function drawDone(){
-//     const parentElement = document.getElementById('done-box');
-//     const header = "Done";
-//     const data_done = localStorage.getItem('data_DoneBox') ? JSON.parse(localStorage.getItem('data_DoneBox')) : [];
-
-//     drawTask(parentElement,header,data_done);
-// };
 
 function drawTodo(){
     const parentElement = document.getElementById('todo-box');
@@ -100,7 +67,7 @@ function drawTask(parentElement,header,data){
     parentElement.innerHTML = content;
 };
 
-// Function edita Data - allow user get Data from inside localstorage and link it to input description
+// Function edit/change Data - allow user get Data from inside localstorage and link it to input description
 function edit(i){
     console.log(i)
     let data_todo = localStorage.getItem('data_ToDoBox') ? JSON.parse(localStorage.getItem('data_ToDoBox')) : [];
@@ -112,8 +79,6 @@ function edit(i){
     document.getElementById('change-information').style.display = "inline-block"
 };
 
-
-// Function change Data - allow user change data inside localstorage after change data input
 function changeData() {
     let description = document.getElementById('input-description').value;
     let input_typekanban = document.getElementById('input-type').value;
@@ -152,34 +117,7 @@ function move() {
         resetInput();
 };
 
-//     } else if(input_typekanban === "Inprogress") {
-//         let data_InprogressBox = localStorage.getItem('data_InprogressBox') ? JSON.parse(localStorage.getItem('data_InprogressBox')) : [];
-//             data_InprogressBox.push({
-//                 descript: description,
-//                 input_type: input_typekanban,
-//             });
-//             localStorage.setItem('data_InprogressBox', JSON.stringify(data_InprogressBox));
-//             this.drawInprogress();
-
-//         } else if (input_typekanban === "Done") {
-//             let data_DoneBox = localStorage.getItem('data_DoneBox') ? JSON.parse(localStorage.getItem('data_DoneBox')) : [];
-//                 data_DoneBox.push({
-//                     descript: description,
-//                     input_type: input_typekanban,
-//                 });
-//                 localStorage.setItem('data_DoneBox', JSON.stringify(data_DoneBox));
-//                 this.drawDone();
-
-//             } else {
-//                 alert("Vui lòng kiểm tra lại dữ liệu");
-//             };
-
-//         document.getElementById('save-information').style.display = "inline-block"
-//         document.getElementById('change-information').style.display = "none"
-//         resetInput();
-// };
-
-// // Function delete data on local storage
+// Function delete data on local storage
 function deleteData(i) {
     let data_ToDoBox = localStorage.getItem('data_ToDoBox') ? JSON.parse(localStorage.getItem('data_ToDoBox')) : [];
         if(confirm("Do you want to delete?")) {
