@@ -7,7 +7,7 @@
     <title>Test Project Kanban Board</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="drawTodoReport(), drawInprogressReport(), drawDoneReport()">
+<body onload="drawTodo()">
     <div id="logo">
         <img src="images/1998.png" alt="">
     </div>
@@ -27,7 +27,7 @@
                 </div>
 
                 <div>
-                    <input id="index" type="hidden">
+                    <input id="todo" type="hidden">
                 </br>
                 </div>
 
@@ -42,12 +42,10 @@
 
                 <label>&nbsp;</label>
                 <button id="save-information" class="information-input" onclick="recordDataInput()">Save</button>
-                <button id="change-information" class="information-input" style="display: none" onclick="changeData(), deleteData()">Change</button>
+                <button id="change-information" class="information-input" style="display: none" onclick="changeData()">Change</button>
+                <button onclick="move()">Move</button>
 
             </div>
-
-            <div id="todo-box-2">
-             </div>
 
             <div id="todo-box" class="kanban-box">
                 <h3>To Do</h3>
