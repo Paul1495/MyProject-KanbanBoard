@@ -36,7 +36,7 @@ body {
     margin: 0.5rem;
 }
 
-#todo-box, #inprogress-box, #done-box, #information-box  {
+#todo-box, #inprogress-box, #done-box, #information-box, #switch-box  {
     padding: 0.6rem;
     width: 50.5%;
     min-width: 10rem;

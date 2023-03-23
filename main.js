@@ -1,13 +1,55 @@
+const btnSwitchClicked = (event)=>{
+    console.log(event);
+    const taskName = document.getElementById("taskname-input").value;
+    const fromLocation = document.getElementById("fromLocation-input").value;
+    const toLocation = document.getElementById("toLocation-input").value;
+    switchLocation(taskName,fromLocation,toLocation);
+}
 const switchLocation = (taskName,fromLocation,toLocation)=>{
     // Check if from Location contain item with taskName
-    // If exists
-    // Create item in toLocation
+    let data = document.getElementById("todo-box").childNodes;
+    if (taskName == null ) return;
+    data.forEach((item) => {
+        if (taskName === item.id) {
+            console.log("ok")
+        } else {
+            console.log("not oke")
+        }
+        });
     
+        // declare childNode variable
+        // Get childnods of frome
+        // Loop childNodes
+        // if childNodes has text == taskName 
+        // set that childnode - use break to get out of loop
+    // If exists
+        // if childNode is set then is exited continue next step else return
+
+    // Switch item in toLocation
+        // Get toLocation 
+        // insert before fisrt child 
+
     // Update data in localStorage
 
-}
+    // console.log(taskName);
+    // console.log(fromLocation);
+    // console.log(toLocation);
+};
+// function taskName() {
+//     let data = document.getElementById("todo-box").childNodes;
+//     var input_data = document.getElementById("taskName").value;
+//     if (input_data == null) return;
+//     data.forEach((item, index) => {
+//         if (item.id === input_data) {
+//             console.log("OK")
+//         } else {
+//             console.log("not OK")
+//         };
+//     });
+// };
 
-const deleteItemInLocation = (taskName,Location)=>{
+
+const deleteItemInLocation = (taskName1,Location)=>{
     // Check if from Location contain item with taskName
 
     // Delete item in fromLocation
@@ -44,7 +86,7 @@ if (((inputdescript).length < 50) && (input_typekanban === "ToDo"))
     resetInput();
 };
 
-function drawTodo(){
+function drawTodo() {
     const parentElement = document.getElementById('todo-box');
     const header = "To do";
     const data_todo = localStorage.getItem('data_ToDoBox') ? JSON.parse(localStorage.getItem('data_ToDoBox')) : [];
@@ -58,8 +100,7 @@ function drawTask(parentElement,header,data){
                 data.forEach((prop, i) => {
                     content += `
                     <div id="${prop.descript}" class="kanban-box" onclick="edit(${i})" ondblclick="deleteData(${i})">
-                    <span>${prop.descript}</span>
-                   
+                    <span>${prop.descript}</span> 
                 </div>
                 `
                 });
@@ -69,10 +110,9 @@ function drawTask(parentElement,header,data){
 
 // Function edit/change Data - allow user get Data from inside localstorage and link it to input description
 function edit(i){
-    console.log(i)
     let data_todo = localStorage.getItem('data_ToDoBox') ? JSON.parse(localStorage.getItem('data_ToDoBox')) : [];
-    document.getElementById('input-description').value = data_todo[i].descript
-    document.getElementById('input-type').value = data_todo[i].input_type
+    document.getElementById('taskname-input').value = data_todo[i].descript
+    document.getElementById('fromLocation-input').value = data_todo[i].input_type
     document.getElementById('todo').value = i
 
     document.getElementById('save-information').style.display = "none"

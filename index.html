@@ -17,7 +17,7 @@
             <h2>KANBAN BOARD</h2>
         </div>
 
-        <div class="box">
+        <div class="box" >
 
             <div id="information-box"><h3>information Box</h3>
                 <div>
@@ -44,7 +44,18 @@
                 <button id="save-information" class="information-input" onclick="recordDataInput()">Save</button>
                 <button id="change-information" class="information-input" style="display: none" onclick="changeData()">Change</button>
                 <button id="move-information" class="information-input" onclick="move()">Move</button>
+                
+            </div>
 
+            <div id="switch-box" class="kanban-box">
+                <h3>Switch</h3>
+                <input type="text" id="taskname-input" placeholder="taskName" class="information-input">
+                <input type="text" id="fromLocation-input" placeholder="fromLocation" class="information-input">
+                <input type="text" id="toLocation-input" placeholder="toLocation" class="information-input">
+                </br>
+
+                <label>&nbsp;</label>
+                <button id="move-data" class="information-input" onclick="btnSwitchClicked()">Move Data</button>
             </div>
 
             <div id="todo-box" class="kanban-box">
