@@ -7,7 +7,7 @@
     <title>Test Project Kanban Board</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body onload="drawTodo()">
+<body onload="drawTask()">
     <div id="logo">
         <img src="images/1998.png" alt="">
     </div>
@@ -25,25 +25,11 @@
                     <span id="inputDescription-error" class="error"></span>
                 </br>
                 </div>
-
                 <div>
                     <input id="todo" type="hidden">
-                </br>
                 </div>
-
-                <select id="input-type" class="information-input">
-                    <option value="Type" selected>--Type--</option>
-                    <option value="ToDo">ToDo</option>
-                    <option value="Inprogress">InProgress</option>
-                    <option value="Done">Done</option>
-                </select>
-                <span id="inputType-error" class="error"></span>
-                </br>
-
                 <label>&nbsp;</label>
-                <button id="save-information" class="information-input" onclick="recordDataInput()">Save</button>
-                <button id="change-information" class="information-input" style="display: none" onclick="changeData()">Change</button>
-                <button id="move-information" class="information-input" onclick="move()">Move</button>
+                <button id="save-information" class="information-input" onclick="savedButtonClicked()">Save</button>
                 
             </div>
 
@@ -51,11 +37,17 @@
                 <h3>Switch</h3>
                 <input type="text" id="taskname-input" placeholder="taskName" class="information-input">
                 <input type="text" id="fromLocation-input" placeholder="fromLocation" class="information-input">
-                <input type="text" id="toLocation-input" placeholder="toLocation" class="information-input">
+                <select type="text" id="toLocation-input" placeholder="toLocation" class="information-input">
+                    <option value="ToDo">ToDo</option>
+                    <option value="Inprogress">InProgress</option>
+                    <option value="Done">Done</option>
+                </select>
+                
                 </br>
 
                 <label>&nbsp;</label>
-                <button id="move-data" class="information-input" onclick="btnSwitchClicked()">Move Data</button>
+                <button id="move-data" class="information-input" onclick="btnSwitchClicked(), move()">Move Data</button>
+                <button id="change-information" class="information-input" onclick="changeData()">Change</button>
             </div>
 
             <div id="todo-box" class="kanban-box">
